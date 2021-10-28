@@ -5,5 +5,5 @@
 <br />
 Clayson Caobianco de Sousa<br />
 Henrique Munhoz Leite<br />
-Larissa Trivinho Galesov<br />
+Larissa Trivinho Gelesov<br />
 Lorrayne Saraiva dos Santos<br />
