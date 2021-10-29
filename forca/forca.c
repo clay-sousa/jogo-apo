@@ -5,7 +5,7 @@ int menu;
 
 int main (void) {
 	setlocale (LC_ALL, "Portuguese");
-	
+
 	printf("Jogo: A Forca");
 	printf("\nMenu Principal");
 	printf("\n1. Sobre o jogo");
@@ -13,7 +13,7 @@ int main (void) {
 	printf("\n3. Finalizar");
 	printf("\nDigite a opção desejada: ");
 	scanf("%d", &menu);
-	
+
 	if (menu==1){
 		printf("\nSobre o Jogo:");
 	}
@@ -30,8 +30,8 @@ int main (void) {
 				printf("\nComando Inválido...");
 				printf("\nSelecione uma opção válida.");
 			}
-	
-	
-	
+
+
+
 	return 0;
 }
