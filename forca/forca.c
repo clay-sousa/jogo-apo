@@ -1,12 +1,13 @@
-#include<stdio.h>
 #include<stdlib.h>
+#include<stdio.h>
 #include<locale.h>
+#include<windows.h>
 #include<time.h>
 
 
 //Menu Princial
 void menu() {
-	printf("Jogo: A Forca\n\n");
+	printf(":: A Forca ::\n\n");
 	printf("Menu Principal\n");
 	printf("\n1. Sobre o jogo");
 	printf("\n2. Jogar");
@@ -57,9 +58,9 @@ void sobre_inst() {
 //Menu Jogar
 void menu_jogar(){
 	printf(":: Jogar ::");
-	printf("\n\n1. Nível 1 - Fácil - 1 palavra\n");
+	printf("\n\n1. Nível 1 - Fácil - 1 palavra");
 	printf("\n2. Nível 2 - Dificil - 2 palavras");
-	printf("\n3. Voltar");
+	printf("\n\n3. Voltar");
 	printf("\n\nDigite a opção desejada: ");
 }
 
@@ -71,6 +72,8 @@ void menu_sair(){
 	printf("\n2. Sim");
 	printf("\n\nDigite a opção desejada: ");
 }
+
+//Jogo
 
 
 //Lógica
@@ -89,10 +92,8 @@ char escolha_user(){
 				printf("Opção Inválida...\n\n");
 				sleep(2);
 				system("cls");
-				printf("\nCarregando...");
-				sleep(2);
-				system("cls");
-				menu();	
+				loading();
+				menu();
 		}
 	}	
 }
@@ -112,13 +113,53 @@ char escolha_sobre(){
 				printf("Opção Inválida...\n\n");
 				sleep(2);
 				system("cls");
-				printf("\nCarregando...");
-				sleep(2);
-				system("cls");
+				loading();
 				menu_sobre();
 		}
 	}
 }
+
+/*char escolha_aforca(){
+	char op_sobre;
+	int val_sobre = 0;
+	while(val_sobre == 0){
+		scanf(" %c", &op_sobre);
+		switch(op_sobre){
+			case '1':
+			case '2':
+			case '3':
+				system("cls");
+				return op_sobre;
+			default:
+				printf("Opção Inválida...\n\n");
+				sleep(2);
+				system("cls");
+				loading();
+				menu_sobre();
+		}
+	}
+}
+
+char escolha_comojogar(){
+	char op_sobre;
+	int val_sobre = 0;
+	while(val_sobre == 0){
+		scanf(" %c", &op_sobre);
+		switch(op_sobre){
+			case '1':
+			case '2':
+			case '3':
+				system("cls");
+				return op_sobre;
+			default:
+				printf("Opção Inválida...\n\n");
+				sleep(2);
+				system("cls");
+				loading();
+				menu_sobre();
+		}
+	}
+}*/
 
 char escolha_jogar(){
 	char op_jogar;
@@ -135,9 +176,7 @@ char escolha_jogar(){
 				printf("Opção Inválida...\n\n");
 				sleep(2);
 				system("cls");
-				printf("\nCarregando...");
-				sleep(2);
-				system("cls");
+				loading();
 				menu_jogar();
 		}
 	}
@@ -162,49 +201,150 @@ char escolha_sair(){
 				printf("Opção Inválida...\n\n");
 				sleep(2);
 				system("cls");
-				printf("\nCarregando...");
-				sleep(2);
-				system("cls");
+				loading();
 				menu_sair();
 		}
 	}
 }
 
 int sobre_jogo(){
-	printf("\n\nCarregando...");
-	sleep(3);
+	loading();
 	system("cls");
 	menu_sobre();
 	escolha_sobre();
 }
 
+/*int sobre_forca(){
+	loading();
+	system("cls");
+}*/
+
 int jogar(){
-	printf("\n\nCarregando...");
-	sleep(3);
+	loading();
 	system("cls");
 	menu_jogar();
 	escolha_jogar();
 }
 
 int fim(){
-	printf("\n\nCarregando...");
-	sleep(3);
+	loading();
 	system("cls");
 	menu_sair();
 	escolha_sair();
 }
 
+void loading() {
+	printf("C arregando...");
+	usleep(100000);
+	system("cls");
+	printf("Ca rregando...");
+	usleep(100000);
+	system("cls");
+	printf("Car regando...");
+	usleep(100000);
+	system("cls");
+	printf("Carr egando...");
+	usleep(100000);
+	system("cls");
+	printf("Carre gando...");
+	usleep(100000);
+	system("cls");
+	printf("Carreg ando...");
+	usleep(100000);
+	system("cls");
+	printf("Carrega ndo...");
+	usleep(100000);
+	system("cls");
+	printf("Carregan do...");
+	usleep(100000);
+	system("cls");
+	printf("Carregand o...");
+	usleep(100000);
+	system("cls");
+	printf("Carregando ...");
+	usleep(100000);
+	system("cls");
+	printf("Carregando. ..");
+	usleep(100000);
+	system("cls");
+	printf("Carregando.. .");
+	usleep(100000);
+	system("cls");
+	printf("Carregando...");
+	usleep(100000);
+	system("cls");
+}
+
 //Arrays
 
 //Print Jogo
-/*
-      printf("\t\t\t  _______\n");
-      printf("\t\t\t  |/\n");
-      printf("\t\t\t  |\n");
-      printf("\t\t\t  |\n");
-      printf("\t\t\t  |\n");
-      printf("\t\t\t  |\n");
-      printf("\t\t\t__|_________\n\n"); */
+void boneco_forca(int i){
+	switch(i){
+		case 0:
+			printf("\t\t\t  _______\n");
+      		printf("\t\t\t  |/   | \n");
+      		printf("\t\t\t  |      \n");
+      		printf("\t\t\t  |\n");
+      		printf("\t\t\t  |\n");
+      		printf("\t\t\t  |\n");
+      		printf("\t\t\t__|_________\n\n");
+      		break;
+      	case 1:
+			printf("\t\t\t  _______\n");
+      		printf("\t\t\t  |/   | \n");
+      		printf("\t\t\t  |    O \n");
+      		printf("\t\t\t  |\n");
+      		printf("\t\t\t  |\n");
+      		printf("\t\t\t  |\n");
+      		printf("\t\t\t__|_________\n\n");
+      		break;
+      	case 2:
+			printf("\t\t\t  _______\n");
+      		printf("\t\t\t  |/   | \n");
+      		printf("\t\t\t  |    O \n");
+      		printf("\t\t\t  |    |\n");
+      		printf("\t\t\t  |    |\n");
+      		printf("\t\t\t  |\n");
+      		printf("\t\t\t__|_________\n\n");
+      		break;
+      	case 3:
+			printf("\t\t\t  _______\n");
+      		printf("\t\t\t  |/   | \n");
+      		printf("\t\t\t  |    O \n");
+      		printf("\t\t\t  |    |\\n");
+      		printf("\t\t\t  |    |\n");
+      		printf("\t\t\t  |\n");
+      		printf("\t\t\t__|_________\n\n");
+      		break;
+      	case 4:
+			printf("\t\t\t  _______\n");
+      		printf("\t\t\t  |/   | \n");
+      		printf("\t\t\t  |    O \n");
+      		printf("\t\t\t  |   /|\\n");
+      		printf("\t\t\t  |    |\n");
+      		printf("\t\t\t  |\n");
+      		printf("\t\t\t__|_________\n\n");
+      		break;
+      	case 5:
+			printf("\t\t\t  _______\n");
+      		printf("\t\t\t  |/   | \n");
+      		printf("\t\t\t  |    O \n");
+      		printf("\t\t\t  |   /|\\n");
+      		printf("\t\t\t  |    |\n");
+      		printf("\t\t\t  |     \\n");
+      		printf("\t\t\t__|_________\n\n");
+      		break;
+      	case 6:
+			printf("\t\t\t  _______\n");
+      		printf("\t\t\t  |/   | \n");
+      		printf("\t\t\t  |    O \n");
+      		printf("\t\t\t  |   /|\\n");
+      		printf("\t\t\t  |    |\n");
+      		printf("\t\t\t  |   / \\n");
+      		printf("\t\t\t__|_________\n\n");
+      		break;
+	}
+}
       
 
 int main (){
@@ -214,7 +354,6 @@ int main (){
 	menu();
 	op = escolha_user();
 	
-	printf("A opção escolhida foi %c", op);
 	
 	if(op == '1'){
 		sobre_jogo();
