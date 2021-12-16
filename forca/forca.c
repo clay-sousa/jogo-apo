@@ -336,6 +336,8 @@ int main (){
 				break;
 			case 7:
 				
+			case 8:	
+				
 			default:
 				system("cls");
 		}
