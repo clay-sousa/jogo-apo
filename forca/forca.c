@@ -7,6 +7,7 @@
 
 int user_op = 1;
 int program = 1;
+int dificuldade = 0;
 
 //Menu Princial
 void menu() {
@@ -102,7 +103,7 @@ void sobre_histforca() {
 	printf("O jogador (que está tentando adivinhar a palavra) pode escolher\n");
 	printf("entre falar uma letra ou fazer uma tentativa perigosa de tentar\n");
 	printf("adivinhar a palavra falando a palavra que pensa que é\n");
-	printf("\n:: História da Forca ::");
+	printf("\n:: História da Forca ::\n");
 	printf ("Um dos jogos mais antigos entre as tradições, algumas teorias argumentam que a brincadeira foi criada na Inglaterra Victoriana\n");
 	printf ("Especialistas ainda defendem que o jogo da forca ajuda as crianças a ultrapassar problemas de dislexia\n");
 	printf ("O Jogo da Forca é bem antigo e sua origem é obscura,acredita-se que foi criado na Inglaterra Victoriana\n");
@@ -140,18 +141,17 @@ int sobre_forca(){
 
 void sobre_inst() {
 	printf(":: Como Jogar ::\n\n");
-	printf("#1 O jogador deverá escolher o nível de dificuldade pretendido\n");
-	printf("#2 O computador irá sortear uma palavra aleatória no nível fácil ou 2 palavras no nivel dificil para o jogador adivinhar\n");
+	printf("#1 O jogador deverá escolher o tipo de jogo desejado\n");
 	printf("#3 O jogador poderá escolher uma letra que tenha na palavra ou arriscar acertar a palavra inteira\n\n");
-	printf(":: Nível Fácil ::\n\n");
-	printf("a. O jogador poderá escolher até três dicas sem perder pontuação\n");
-	printf("b. Caso o jogador acerte uma letra, ele somará 3 pontos\n\n");
-	printf(":: Nível Difícil ::\n\n");
-	printf("a. O jogador terá direito a 3 dicas\n");
-	printf("b. Caso o jogador opte por uma dica, perderá 5 pontos para cada uma\n");
-	printf("c. Caso o jogador erre a letra escolhida, perderá 1 ponto\n");
+	printf(":: Palavras Pré-Definidas ::\n\n");
+	printf("a. O jogador poderá escolher o tipo de palavra que deseja\n");
+	printf("b. O computador irá sortear uma palavra aleatória no nível fácil ou 2 palavras no nivel dificil para o jogador adivinhar\n\n");
+	printf(":: Palavras Personalizada - 2 jogadores ::\n\n");
+	printf("a. O jogador digita uma dica\n");
+	printf("b. O jogador digita a palavra a ser adivinhada pelo oponente\n");
+	printf("c. O outro jogador tentará adivinhar a palavra escolhida\n");
 	printf("d. Caso o jogador acerte uma letra, ele somará 3 pontos\n\n");
-	printf(":: Para os 2 níveis o jogador terá direito a 6 ERROS, antes de ir para a forca (x_x). ::");
+	printf(":: Para os modo de jogo, o jogador terá direito a 6 ERROS, antes de ir para a forca (x_x). ::");
 	printf("\n\n1. Voltar");
 	printf("\n\nDigite a opção desejada: ");
 }
@@ -183,49 +183,6 @@ int inst() {
 	escolha_inst();
 }
 
-//Menu Jogar
-void menu_jogar(){
-	printf(":: Jogar ::");
-	printf("\n\n1. Nível 1 - Fácil - 1 palavra");
-	printf("\n2. Nível 2 - Dificil - 2 palavras");
-	printf("\n\n3. Voltar");
-	printf("\n\nDigite a opção desejada: ");
-}
-
-char escolha_jogar(){
-	char op_jogar;
-	int val_jogar = 0;
-	while(val_jogar == 0){
-		scanf(" %c", &op_jogar);
-		switch(op_jogar){
-			case '1':
-				system("cls");
-				user_op = 7;
-				return op_jogar;
-			case '2':
-				system("cls");
-				user_op = 8;
-				return op_jogar;
-			case '3':
-				system("cls");
-				user_op = 1;
-				return op_jogar;
-			default:
-				printf("Opção Inválida...\n\n");
-				sleep(2);
-				system("cls");
-				loading();
-				menu_jogar();
-		}
-	}
-}
-
-int jogar(){
-	loading();
-	system("cls");
-	menu_jogar();
-	escolha_jogar();
-}
 //Menu sair
 void menu_sair(){
 	printf("Finalizar");
@@ -247,9 +204,14 @@ char escolha_sair(){
 				return op_sair;
 			case '2':
 				system("cls");
-				printf("Finalizando...");
+				finalizando();
 				printf("\n\nObrigado por jogar :D");
+				sleep(1);
+				system("cls");
+				creditos();
+				sleep(10);
 				program = 0;
+				system("cls");
 				exit(0);
 			default:
 				printf("Opção Inválida...\n\n");
@@ -309,9 +271,600 @@ void loading() {
 	usleep(100000);
 	system("cls");
 }
-      
 
-int main (){
+void finalizando() {
+	printf("F inalizando...");
+	usleep(100000);
+	system("cls");
+	printf("Fi nalizando...");
+	usleep(100000);
+	system("cls");
+	printf("Fin alizando...");
+	usleep(100000);
+	system("cls");
+	printf("Fina lizando...");
+	usleep(100000);
+	system("cls");
+	printf("Final izando...");
+	usleep(100000);
+	system("cls");
+	printf("Finali zando...");
+	usleep(100000);
+	system("cls");
+	printf("Finaliz ando...");
+	usleep(100000);
+	system("cls");
+	printf("Finaliza ndo...");
+	usleep(100000);
+	system("cls");
+	printf("Finalizan do...");
+	usleep(100000);
+	system("cls");
+	printf("Finalizand o...");
+	usleep(100000);
+	system("cls");
+	printf("Finalizando. ..");
+	usleep(100000);
+	system("cls");
+	printf("Finalizando.. .");
+	usleep(100000);
+	system("cls");
+	printf("Finalizando...");
+	usleep(100000);
+	system("cls");
+}
+
+void creditos() {
+	printf("\n\n\n\n\n\n\n\n\n\n            Autores");
+	printf("\nClayson Sousa  ");
+	printf("   RM: GU3020347");
+	printf("\nHenrique Munhoz");
+	printf("   RM: GU3020185");
+	printf("\nLarissa Gelesov");
+	printf("   RM: GU3020142");
+	printf("\nLorrayne Santos");
+	printf("   RM: GU3020827\n");
+	printf("\n            Turma");
+	printf("\n1º ADS - 2/2021\n");
+	printf("\n            Jogo");
+	printf("\nA forca - 2021\n");
+	printf("\n            Matéria");
+	printf("\nAlgoritmos de Programação (APO)\n");
+	printf("\n            Professora");
+	printf("\nMarcia Pereira\n");
+	printf("\n            Agradecimentos");
+	printf("\nCesar Reigado");
+	usleep(100000);
+	system("cls");
+	printf("\n\n\n\n\n\n\n\n\n            Autores");
+	printf("\nClayson Sousa  ");
+	printf("   RM: GU3020347");
+	printf("\nHenrique Munhoz");
+	printf("   RM: GU3020185");
+	printf("\nLarissa Gelesov");
+	printf("   RM: GU3020142");
+	printf("\nLorrayne Santos");
+	printf("   RM: GU3020827\n");
+	printf("\n            Turma");
+	printf("\n1º ADS - 2/2021\n");
+	printf("\n            Jogo");
+	printf("\nA forca - 2021\n");
+	printf("\n            Matéria");
+	printf("\nAlgoritmos de Programação (APO)\n");
+	printf("\n            Professora");
+	printf("\nMarcia Pereira\n");
+	printf("\n            Agradecimentos");
+	printf("\nCesar Reigado");
+	usleep(100000);
+	system("cls");
+	printf("\n\n\n\n\n\n\n\n            Autores");
+	printf("\nClayson Sousa  ");
+	printf("   RM: GU3020347");
+	printf("\nHenrique Munhoz");
+	printf("   RM: GU3020185");
+	printf("\nLarissa Gelesov");
+	printf("   RM: GU3020142");
+	printf("\nLorrayne Santos");
+	printf("   RM: GU3020827\n");
+	printf("\n            Turma");
+	printf("\n1º ADS - 2/2021\n");
+	printf("\n            Jogo");
+	printf("\nA forca - 2021\n");
+	printf("\n            Matéria");
+	printf("\nAlgoritmos de Programação (APO)\n");
+	printf("\n            Professora");
+	printf("\nMarcia Pereira\n");
+	printf("\n            Agradecimentos");
+	printf("\nCesar Reigado");
+	usleep(100000);
+	system("cls");
+	printf("\n\n\n\n\n\n\n            Autores");
+	printf("\nClayson Sousa  ");
+	printf("   RM: GU3020347");
+	printf("\nHenrique Munhoz");
+	printf("   RM: GU3020185");
+	printf("\nLarissa Gelesov");
+	printf("   RM: GU3020142");
+	printf("\nLorrayne Santos");
+	printf("   RM: GU3020827\n");
+	printf("\n            Turma");
+	printf("\n1º ADS - 2/2021\n");
+	printf("\n            Jogo");
+	printf("\nA forca - 2021\n");
+	printf("\n            Matéria");
+	printf("\nAlgoritmos de Programação (APO)\n");
+	printf("\n            Professora");
+	printf("\nMarcia Pereira\n");
+	printf("\n            Agradecimentos");
+	printf("\nCesar Reigado");
+	usleep(100000);
+	system("cls");
+	printf("\n\n\n\n\n\n            Autores");
+	printf("\nClayson Sousa  ");
+	printf("   RM: GU3020347");
+	printf("\nHenrique Munhoz");
+	printf("   RM: GU3020185");
+	printf("\nLarissa Gelesov");
+	printf("   RM: GU3020142");
+	printf("\nLorrayne Santos");
+	printf("   RM: GU3020827\n");
+	printf("\n            Turma");
+	printf("\n1º ADS - 2/2021\n");
+	printf("\n            Jogo");
+	printf("\nA forca - 2021\n");
+	printf("\n            Matéria");
+	printf("\nAlgoritmos de Programação (APO)\n");
+	printf("\n            Professora");
+	printf("\nMarcia Pereira\n");
+	printf("\n            Agradecimentos");
+	printf("\nCesar Reigado");
+	usleep(100000);
+	system("cls");
+	printf("\n\n\n\n\n            Autores");
+	printf("\nClayson Sousa  ");
+	printf("   RM: GU3020347");
+	printf("\nHenrique Munhoz");
+	printf("   RM: GU3020185");
+	printf("\nLarissa Gelesov");
+	printf("   RM: GU3020142");
+	printf("\nLorrayne Santos");
+	printf("   RM: GU3020827\n");
+	printf("\n            Turma");
+	printf("\n1º ADS - 2/2021\n");
+	printf("\n            Jogo");
+	printf("\nA forca - 2021\n");
+	printf("\n            Matéria");
+	printf("\nAlgoritmos de Programação (APO)\n");
+	printf("\n            Professora");
+	printf("\nMarcia Pereira\n");
+	printf("\n            Agradecimentos");
+	printf("\nCesar Reigado");
+	usleep(100000);
+	system("cls");
+	printf("\n\n\n\n            Autores");
+	printf("\nClayson Sousa  ");
+	printf("   RM: GU3020347");
+	printf("\nHenrique Munhoz");
+	printf("   RM: GU3020185");
+	printf("\nLarissa Gelesov");
+	printf("   RM: GU3020142");
+	printf("\nLorrayne Santos");
+	printf("   RM: GU3020827\n");
+	printf("\n            Turma");
+	printf("\n1º ADS - 2/2021\n");
+	printf("\n            Jogo");
+	printf("\nA forca - 2021\n");
+	printf("\n            Matéria");
+	printf("\nAlgoritmos de Programação (APO)\n");
+	printf("\n            Professora");
+	printf("\nMarcia Pereira\n");
+	printf("\n            Agradecimentos");
+	printf("\nCesar Reigado");
+	usleep(100000);
+	system("cls");
+	printf("\n\n\n            Autores");
+	printf("\nClayson Sousa  ");
+	printf("   RM: GU3020347");
+	printf("\nHenrique Munhoz");
+	printf("   RM: GU3020185");
+	printf("\nLarissa Gelesov");
+	printf("   RM: GU3020142");
+	printf("\nLorrayne Santos");
+	printf("   RM: GU3020827\n");
+	printf("\n            Turma");
+	printf("\n1º ADS - 2/2021\n");
+	printf("\n            Jogo");
+	printf("\nA forca - 2021\n");
+	printf("\n            Matéria");
+	printf("\nAlgoritmos de Programação (APO)\n");
+	printf("\n            Professora");
+	printf("\nMarcia Pereira\n");
+	printf("\n            Agradecimentos");
+	printf("\nCesar Reigado");
+	usleep(100000);
+	system("cls");
+	printf("\n\n            Autores");
+	printf("\nClayson Sousa  ");
+	printf("   RM: GU3020347");
+	printf("\nHenrique Munhoz");
+	printf("   RM: GU3020185");
+	printf("\nLarissa Gelesov");
+	printf("   RM: GU3020142");
+	printf("\nLorrayne Santos");
+	printf("   RM: GU3020827\n");
+	printf("\n            Turma");
+	printf("\n1º ADS - 2/2021\n");
+	printf("\n            Jogo");
+	printf("\nA forca - 2021\n");
+	printf("\n            Matéria");
+	printf("\nAlgoritmos de Programação (APO)\n");
+	printf("\n            Professora");
+	printf("\nMarcia Pereira\n");
+	printf("\n            Agradecimentos");
+	printf("\nCesar Reigado");
+	usleep(100000);
+	system("cls");
+	printf("\n            Autores");
+	printf("\nClayson Sousa  ");
+	printf("   RM: GU3020347");
+	printf("\nHenrique Munhoz");
+	printf("   RM: GU3020185");
+	printf("\nLarissa Gelesov");
+	printf("   RM: GU3020142");
+	printf("\nLorrayne Santos");
+	printf("   RM: GU3020827\n");
+	printf("\n            Turma");
+	printf("\n1º ADS - 2/2021\n");
+	printf("\n            Jogo");
+	printf("\nA forca - 2021\n");
+	printf("\n            Matéria");
+	printf("\nAlgoritmos de Programação (APO)\n");
+	printf("\n            Professora");
+	printf("\nMarcia Pereira\n");
+	printf("\n            Agradecimentos");
+	printf("\nCesar Reigado");
+	usleep(100000);
+	system("cls");
+	printf("            Autores");
+	printf("\nClayson Sousa  ");
+	printf("   RM: GU3020347");
+	printf("\nHenrique Munhoz");
+	printf("   RM: GU3020185");
+	printf("\nLarissa Gelesov");
+	printf("   RM: GU3020142");
+	printf("\nLorrayne Santos");
+	printf("   RM: GU3020827\n");
+	printf("\n            Turma");
+	printf("\n1º ADS - 2/2021\n");
+	printf("\n            Jogo");
+	printf("\nA forca - 2021\n");
+	printf("\n            Matéria");
+	printf("\nAlgoritmos de Programação (APO)\n");
+	printf("\n            Professora");
+	printf("\nMarcia Pereira\n");
+	printf("\n            Agradecimentos");
+	printf("\nCesar Reigado");
+}   
+
+int jogo() {
+	
+	const NUM_ITENS = 20;
+
+	char animal[20][12] = { "AVESTRUZ", "BORBOLETA", "CARANGUEJO",
+			"ORANGOTANGO", "CROCODILO", "DROMEDARIO", "ROUXINOL", "CENTOPEIA",
+			"GAFANHOTO", "PINTASSILGO", "HIPOPOTAMO", "LEOPARDO", "GUAXINIM",
+			"JAGUATIRICA", "OSTRA", "MICO", "CHIMPANZE", "CARNEIRO", "GOLFINHO",
+			"MINHOCA" };
+	char comida[20][12] = { "EMPADA", "FARINHA", "FEIJOADA", "COXINHA",
+			"BRIGADEIRO", "CHURRASCO", "LASANHA", "MACARRONADA", "TORTA",
+			"TORRADA", "PIZZA", "PANQUECA", "PIPOCA", "PAMONHA", "OVO",
+			"ACARAJE", "CROISSANT", "HAMBURGUER", "BISCOITO", "BOLO" };
+	char fruta[20][12] = { "ABACATE", "BANANA", "CARAMBOLA", "DAMASCO", "FIGO",
+			"GOIABA", "JABUTICABA", "KIWI", "LARANJA", "MELANCIA", "MANGA",
+			"MARACUJA", "PESSEGO", "PITOMBA", "ROMA", "TANGERINA", "TOMATE",
+			"TAMARINDO", "UVA", "UMBU" };
+	char profissao[20][12] = { "ADVOGADO", "BOMBEIRO", "CARPINTEIRO",
+			"DESENHISTA", "ENGENHEIRO", "ESCRITOR", "FERREIRO", "GUARDA",
+			"HISTORIADOR", "JORNALISTA", "LEILOEIRO", "MARINHEIRO", "OURIVES",
+			"PROGRAMADOR", "PADEIRO", "RELOJOEIRO", "SILVICULTOR", "TRADUTOR",
+			"VETERINARIO", "ZOOLOGO" };
+	char informatica[20][12] = { "LINUX", "WINDOWS", "COBOL", "PROCESSADOR",
+			"TECLADO", "MOUSE", "PROGRAMA", "ALGORITMO", "HACKER", "TOUCHPAD",
+			"ASCII", "JAVA", "JAVASCRIPT", "PROGRAMADOR", "PYTHON", "INTERNET",
+			"ROTEADOR", "SERVIDOR", "GOOGLE", "APPLE" };
+
+	int i;
+	char voltarMenu;
+	char dica[20];
+	char palavra[20];
+	char acertos[12];
+	char palpite;
+	int contemPalpite = 0;
+	int opc = 0;
+	int tema = 0;
+	while (opc != 3) {
+		char letrasUsadas[26];
+		int numLetrasUsadas = 0;
+		int usada;
+		int erros = 0;
+
+		do {
+
+			system("cls");
+			for (i = 0; i < strlen(letrasUsadas); i++) {
+				letrasUsadas[i] = '*';
+			}
+
+			printf("::Forca::");
+			printf("\n\n Escolha o modo de jogo: ");
+			printf("\n\n1. Palavras pré-definidas ");
+			printf("\n2. Palavra personalizada ");
+			printf("\n3. Voltar ");
+			printf("\n\nDigite a opção desejada: ");
+			scanf("%d", &opc);
+
+			if (opc == 1) {
+
+				do {
+
+					system("cls");
+
+					printf("::Forca::");
+					printf("\n\nEscolha o tema para jogar: ");
+					printf("\n\n1. Animais ");
+					printf("\n2. Comida ");
+					printf("\n3. Frutas ");
+					printf("\n4. Profissao ");
+					printf("\n5. Informatica ");
+					printf("\n\nDigite a opção desejada: ");
+					scanf(" %d", &tema);
+
+				} while (tema < 1 || tema > 5);
+
+				srand(time(NULL));
+
+				switch (tema) {
+				case 1:
+					strcpy(dica, "Animal");
+					strcpy(palavra, animal[rand() % NUM_ITENS]);
+					break;
+				case 2:
+					strcpy(dica, "Comida");
+					strcpy(palavra, comida[rand() % NUM_ITENS]);
+					break;
+				case 3:
+					strcpy(dica, "Fruta");
+					strcpy(palavra, fruta[rand() % NUM_ITENS]);
+					break;
+				case 4:
+					strcpy(dica, "Profissao");
+					strcpy(palavra, profissao[rand() % NUM_ITENS]);
+					break;
+				case 5:
+					strcpy(dica, "Informatica");
+					strcpy(palavra, informatica[rand() % NUM_ITENS]);
+					break;
+				default:
+					break;
+				}
+
+			} else if (opc == 2) {
+
+				printf("\n Digite a dica: ");
+				scanf(" %[^\n]", dica);
+				printf("\n Digite a palavra a ser adivinhada: ");
+				scanf(" %[^\n]", palavra);
+
+				for (i = 0; i < strlen(palavra); i++) {
+					palavra[i] = toupper(palavra[i]);
+				}
+
+			} else if (opc == 3) {
+				break;
+			}
+
+		} while (opc != 1 && opc != 2 && opc != 3);
+
+		if (opc != 3) {
+			for (i = 0; i < strlen(palavra); i++) {
+				acertos[i] = '*';
+			}
+
+			acertos[strlen(palavra)] = '\0';
+
+			while (strcmp(palavra, acertos) != 0 && erros != 6) {
+
+				system("cls");
+
+				printf("::Forca::");
+				printf("\n\n  Dica: %s   Letras usadas: ", dica);
+
+				for (i = 0; i < numLetrasUsadas; i++) {
+					printf("%c ", letrasUsadas[i]);
+
+				}
+
+				switch (erros) {
+				case 0:
+					printf("\n\n");
+					printf("  ##########***##  \n");
+					printf("  ####            \n");
+					printf("  ####            \n");
+					printf("  ##              \n");
+					printf("  ##              \n");
+					printf("  ##              \n");
+					printf("  ##              \n");
+					printf("  ##              \n");
+					printf("  ##              \n");
+					printf("  ##              \n");
+					printf("  ##              \n");
+					printf("  ##              \n");
+					printf("  ##              \n");
+					break;
+				case 1:
+					printf("\n\n");
+					printf("  ##########***##  \n");
+					printf("  ####       *    \n");
+					printf("  ####      ***   \n");
+					printf("  ##       *o o*  \n");
+					printf("  ##       * ^ *  \n");
+					printf("  ##         *    \n");
+					printf("  ##              \n");
+					printf("  ##              \n");
+					printf("  ##              \n");
+					printf("  ##              \n");
+					printf("  ##              \n");
+					printf("  ##              \n");
+					printf("  ##              \n");
+					break;
+				case 2:
+					printf("\n\n");
+					printf("  ##########***##  \n");
+					printf("  ####       *    \n");
+					printf("  ####      ***   \n");
+					printf("  ##       *o o*  \n");
+					printf("  ##       * ^ *  \n");
+					printf("  ##         *    \n");
+					printf("  ##         |    \n");
+					printf("  ##         |    \n");
+					printf("  ##         |    \n");
+					printf("  ##         |    \n");
+					printf("  ##         |    \n");
+					printf("  ##              \n");
+					printf("  ##              \n");
+					break;
+				case 3:
+					printf("\n\n");
+					printf("  ##########***##  \n");
+					printf("  ####       *    \n");
+					printf("  ####      ***   \n");
+					printf("  ##       *o o*  \n");
+					printf("  ##       * ^ *  \n");
+					printf("  ##         *    \n");
+					printf("  ##         |    \n");
+					printf("  ##        /|    \n");
+					printf("  ##       / |    \n");
+					printf("  ##         |    \n");
+					printf("  ##         |    \n");
+					printf("  ##              \n");
+					printf("  ##              \n");
+					break;
+				case 4:
+					printf("\n\n");
+					printf("  ##########***##  \n");
+					printf("  ####       *    \n");
+					printf("  ####      ***   \n");
+					printf("  ##       *o o*  \n");
+					printf("  ##       * ^ *  \n");
+					printf("  ##         *    \n");
+					printf("  ##         |    \n");
+					printf("  ##        /|\\  \n");
+					printf("  ##       / | \\ \n");
+					printf("  ##         |    \n");
+					printf("  ##         |    \n");
+					printf("  ##              \n");
+					printf("  ##              \n");
+					break;
+				case 5:
+					printf("\n\n");
+					printf("  ##########***##  \n");
+					printf("  ####       *    \n");
+					printf("  ####      ***   \n");
+					printf("  ##       *o o*  \n");
+					printf("  ##       * ^ *  \n");
+					printf("  ##         *    \n");
+					printf("  ##         |    \n");
+					printf("  ##        /|\\  \n");
+					printf("  ##       / | \\ \n");
+					printf("  ##         |    \n");
+					printf("  ##         |    \n");
+					printf("  ##        /     \n");
+					printf("  ##       /      \n");
+					break;
+				case 6:
+					printf("\n\n");
+					printf("  ##########***##  \n");
+					printf("  ####       *    \n");
+					printf("  ####      ***   \n");
+					printf("  ##       *X X*  \n");
+					printf("  ##       * ^ *  \n");
+					printf("  ##         *    \n");
+					printf("  ##         |    \n");
+					printf("  ##        /|\\   \n");
+					printf("  ##       / | \\  \n");
+					printf("  ##         |    \n");
+					printf("  ##         |    \n");
+					printf("  ##        / \\   \n");
+					printf("  ##       /   \\  \n");
+					break;
+				}
+				printf("  ##               \n");
+				printf("  #######################\n\n  ");
+
+				for (i = 0; i < strlen(palavra); i++) {
+					if (acertos[i] == '*') {
+						printf("_ ");
+					} else {
+						printf("%c ", acertos[i]);
+					}
+				}
+
+				if (strcmp(palavra, acertos) != 0 && erros != 6) {
+
+					usada = 0;
+
+					printf("\n\n  Digite seu palpite: ");
+					scanf(" %c", &palpite);
+					palpite = toupper(palpite);
+
+					for (i = 0; i < 26; i++) {
+						if (letrasUsadas[i] == palpite) {
+							usada = 1;
+						}
+					}
+
+					if (usada == 0) {
+						letrasUsadas[numLetrasUsadas] = palpite;
+						numLetrasUsadas++;
+
+						contemPalpite = 0;
+
+						for (i = 0; i < strlen(palavra); i++) {
+							if (palpite == palavra[i]) {
+								acertos[i] = palpite;
+								contemPalpite = 1;
+							}
+						}
+
+						if (contemPalpite == 0) {
+							erros++;
+						}
+					}
+
+				}
+
+			}
+
+			if (erros == 6) {
+				printf("\n  Você perdeu! =(\n  A palavra era %s", palavra);
+			} else {
+				printf("\n  Você ganhou! :D A palavra era %s", palavra);
+			}
+
+			printf("\n\n  Digite 1 para voltar ao menu: ");
+			scanf(" %c", &voltarMenu);
+		}
+
+	}
+	user_op = 1;
+} 
+
+int jogando(){
+	loading();
+	jogo();
+}
+
+int main (void){
 	setlocale(LC_ALL, "Portuguese");
 	
 	do {
@@ -323,7 +876,7 @@ int main (){
 				sobre_jogo();
 				break;
 			case 3:
-				jogar();
+				jogando();
 				break;
 			case 4:
 				fim();
@@ -334,10 +887,6 @@ int main (){
 			case 6:
 				inst();
 				break;
-			case 7:
-				
-			case 8:	
-				
 			default:
 				system("cls");
 		}
