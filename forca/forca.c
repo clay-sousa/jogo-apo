@@ -550,28 +550,28 @@ int jogo() {
 	
 	const NUM_ITENS = 20;
 
-	char animal[20][12] = { "AVESTRUZ", "BORBOLETA", "CARANGUEJO",
-			"ORANGOTANGO", "CROCODILO", "DROMEDARIO", "ROUXINOL", "CENTOPEIA",
-			"GAFANHOTO", "PINTASSILGO", "HIPOPOTAMO", "LEOPARDO", "GUAXINIM",
-			"JAGUATIRICA", "OSTRA", "MICO", "CHIMPANZE", "CARNEIRO", "GOLFINHO",
-			"MINHOCA" };
-	char comida[20][12] = { "EMPADA", "FARINHA", "FEIJOADA", "COXINHA",
-			"BRIGADEIRO", "CHURRASCO", "LASANHA", "MACARRONADA", "TORTA",
-			"TORRADA", "PIZZA", "PANQUECA", "PIPOCA", "PAMONHA", "OVO",
-			"ACARAJE", "CROISSANT", "HAMBURGUER", "BISCOITO", "BOLO" };
-	char fruta[20][12] = { "ABACATE", "BANANA", "CARAMBOLA", "DAMASCO", "FIGO",
-			"GOIABA", "JABUTICABA", "KIWI", "LARANJA", "MELANCIA", "MANGA",
-			"MARACUJA", "PESSEGO", "PITOMBA", "ROMA", "TANGERINA", "TOMATE",
-			"TAMARINDO", "UVA", "UMBU" };
-	char profissao[20][12] = { "ADVOGADO", "BOMBEIRO", "CARPINTEIRO",
-			"DESENHISTA", "ENGENHEIRO", "ESCRITOR", "FERREIRO", "GUARDA",
-			"HISTORIADOR", "JORNALISTA", "LEILOEIRO", "MARINHEIRO", "OURIVES",
-			"PROGRAMADOR", "PADEIRO", "RELOJOEIRO", "SILVICULTOR", "TRADUTOR",
-			"VETERINARIO", "ZOOLOGO" };
-	char informatica[20][12] = { "LINUX", "WINDOWS", "COBOL", "PROCESSADOR",
-			"TECLADO", "MOUSE", "PROGRAMA", "ALGORITMO", "HACKER", "TOUCHPAD",
-			"ASCII", "JAVA", "JAVASCRIPT", "PROGRAMADOR", "PYTHON", "INTERNET",
-			"ROTEADOR", "SERVIDOR", "GOOGLE", "APPLE" };
+	char eolica[20][12] = { "BARULHO", "VENTO", "ELETRICIDADE",
+			"CINETICA", "BATERIA", "ROTOR", "LIMPA", "MOINHO",
+			"VELEIRO", "HELICE", "MEGAWATTS", "ENERGIA", "ALTITUDE",
+			"BARATA", "SUSTENTAVEL", "RENOVAVEL", "MECANICA", "MODERNO", "ROTACAO",
+			"CAMPO" };
+	char hidreletrica[20][12] = { "AGUA", "QUEDA", "BARRAGEM", "TURBINA",
+			"RIO", "INFRAESTRUTURA", "CONVERSAO", "HIDRAULICA", "RENOVAVEL",
+			"REPRESA", "USINA", "RESERVATORIO", "SUSTENTAVEL", "SEGURANCA", "BOMBEAMENTO",
+			"GIGAWATTS", "CANAIS", "CANOS", "COMPORTA", "CHUVA" };
+	char termoeletrica[20][12] = { "CARVAO", "XISTO", "QUEIMA", "VAPOR", "AGUA",
+			"SISTEMA", "DUTO", "FOSSIL", "CALOR", "TURBINA", "TORRE",
+			"REFRIGERACAO", "CONDENSADOR", "ESTUFA", "TRANSMISSAO", "OXIGENIO", "CHUVA",
+			"COMBUSTIVEL", "CALDEIRAO", "AQUECIMENTO" };
+	char solar[20][12] = { "CALOR", "SOL", "LUZ",
+			"FOTOVOLTAICA", "TERMICA", "ELETRICA", "AQUECEDOR", "RAIOS",
+			"PAINEL", "RENOVAVEL", "FOTOTERMICA", "IRRADIAÇÃO", "HELIOTERMICO",
+			"PLACAS", "INVERSOR", "CAPTACAO", "ESPELHO", "COLETOR",
+			"HELIOSTATUS", "VAPOR" };
+	char nuclear[20][12] = { "REATOR", "PLUTONIO", "URANIO", "RADIACAO",
+			"USINA", "RESFRIAMENTO", "ATOMO", "FISSURA", "NUCLEO", "REACAO",
+			"GERADOR", "VAPOR", "MOTOR", "IRRADIACAO", "NEUTRON", "ELETRON",
+			"PARTICULA", "ISOTOPOS", "ELEMENTO", "CONTROLE" };
 
 	int i;
 	char voltarMenu;
@@ -611,11 +611,11 @@ int jogo() {
 
 					printf("::Forca::");
 					printf("\n\nEscolha o tema para jogar: ");
-					printf("\n\n1. Animais ");
-					printf("\n2. Comida ");
-					printf("\n3. Frutas ");
-					printf("\n4. Profissao ");
-					printf("\n5. Informatica ");
+					printf("\n\n1. Eólica ");
+					printf("\n2. Hidrelétrica ");
+					printf("\n3. Termoelétrica ");
+					printf("\n4. Solar ");
+					printf("\n5. Nuclear ");
 					printf("\n\nDigite a opção desejada: ");
 					scanf(" %d", &tema);
 
@@ -625,24 +625,24 @@ int jogo() {
 
 				switch (tema) {
 				case 1:
-					strcpy(dica, "Animal");
-					strcpy(palavra, animal[rand() % NUM_ITENS]);
+					strcpy(dica, "Eólica");
+					strcpy(palavra, eolica[rand() % NUM_ITENS]);
 					break;
 				case 2:
-					strcpy(dica, "Comida");
-					strcpy(palavra, comida[rand() % NUM_ITENS]);
+					strcpy(dica, "Hidrelétrica");
+					strcpy(palavra, hidreletrica[rand() % NUM_ITENS]);
 					break;
 				case 3:
-					strcpy(dica, "Fruta");
-					strcpy(palavra, fruta[rand() % NUM_ITENS]);
+					strcpy(dica, "Termoelétrica");
+					strcpy(palavra, termoeletrica[rand() % NUM_ITENS]);
 					break;
 				case 4:
-					strcpy(dica, "Profissao");
-					strcpy(palavra, profissao[rand() % NUM_ITENS]);
+					strcpy(dica, "Solar");
+					strcpy(palavra, solar[rand() % NUM_ITENS]);
 					break;
 				case 5:
-					strcpy(dica, "Informatica");
-					strcpy(palavra, informatica[rand() % NUM_ITENS]);
+					strcpy(dica, "Nuclear");
+					strcpy(palavra, nuclear[rand() % NUM_ITENS]);
 					break;
 				default:
 					break;
